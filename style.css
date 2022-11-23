@@ -1,7 +1,28 @@
+@font-face {
+	font-family: "MyWebFont";
+	src: url("fonts/poe-vetica-new/PoeVeticaNew-M8MJ.ttf") format("truetype");
+}
+
 html {
 	background: url(images/RPGIcon.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: "MyWebFont";
+	width: 100%;
+}
+
+.topMenu {
+	flex-direction: row;
+	width: 100%;
+	margin: auto;
+}
+
+.hamburger {
+	font-size: 32px;
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	color: white;
 }
