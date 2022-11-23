@@ -40,3 +40,11 @@
 		font-size: 18px;
 	}
 }
+
+.hamburger {
+	font-size: 32px;
+	cursor: pointer;
+	position: absolute;
+	left: 10px;
+	color: white;
+}
