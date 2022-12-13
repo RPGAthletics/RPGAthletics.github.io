@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://website.gd" type="Script" id=1]
+[ext_resource path="res://RPGIcon.jpg" type="Texture" id=2]
+[ext_resource path="res://new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://HighlightYoutube.png" type="Texture" id=4]
+[ext_resource path="res://3670147.png" type="Texture" id=5]
+[ext_resource path="res://lorenzo.png" type="Texture" id=6]
+
+[node name="Website" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="Root"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="Root/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -409.5
+margin_top = -409.5
+margin_right = 409.5
+margin_bottom = 409.5
+texture = ExtResource( 2 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 40
+
+[node name="ColorRect" type="ColorRect" parent="Root/Background/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+color = Color( 0, 1, 0.537255, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Background/VBoxContainer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -20.0
+margin_right = 400.0
+margin_bottom = 20.0
+custom_constants/separation = 20
+
+[node name="MainButton" type="Button" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+margin_right = 148.0
+margin_bottom = 40.0
+text = "RPG Movement"
+
+[node name="AboutButton" type="Button" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+margin_left = 168.0
+margin_right = 234.0
+margin_bottom = 40.0
+text = "About"
+
+[node name="YoutubeButton" type="TextureButton" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+margin_left = 254.0
+margin_right = 294.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 0 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="MainContent" type="VBoxContainer" parent="Root/Background/VBoxContainer"]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 500.0
+
+[node name="Control" type="Control" parent="Root/Background/VBoxContainer/MainContent"]
+margin_right = 1024.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 400 )
+
+[node name="Lorenzo" type="TextureButton" parent="Root/Background/VBoxContainer/MainContent/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_right = 250.0
+margin_bottom = 376.0
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="AboutContent" type="VBoxContainer" parent="Root/Background/VBoxContainer"]
+margin_top = 540.0
+margin_right = 1024.0
+margin_bottom = 561.0
+
+[node name="Label" type="Label" parent="Root/Background/VBoxContainer/AboutContent"]
+margin_right = 1024.0
+margin_bottom = 21.0
+text = "We are the RPG Movement. What are your stats? Come to us to find out what skills you can do with your stats and level up!"
+align = 1
+
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/YoutubeButton" to="." method="_on_YoutubeButton_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/MainContent/Control/Lorenzo" to="." method="_on_lorenzo_pressed"]

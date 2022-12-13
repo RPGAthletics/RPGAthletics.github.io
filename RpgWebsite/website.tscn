@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://8k1cqax55pf"]
+
+[ext_resource type="Script" path="res://Website.gd" id="1_kmra4"]
+[ext_resource type="Texture2D" uid="uid://diwaotl83l63x" path="res://RPGIcon.jpg" id="1_nsg4g"]
+[ext_resource type="Texture2D" uid="uid://cxfk6ncpgk25n" path="res://lorenzo.png" id="2_8de6y"]
+[ext_resource type="Theme" uid="uid://dn7hjqgg0c4ik" path="res://root_theme.tres" id="2_d0vr2"]
+[ext_resource type="Texture2D" uid="uid://bx8hfev1qrng4" path="res://3670147.png" id="3_322ka"]
+[ext_resource type="Texture2D" uid="uid://b1k5wf34r4fby" path="res://HighlightYoutube.png" id="4_cdavy"]
+[ext_resource type="FontFile" uid="uid://clejas1ym6d00" path="res://fonts/poe-vetica-new/PoeVeticaNew-M8MJ.ttf" id="5_lilro"]
+
+[node name="Website" type="Node"]
+script = ExtResource("1_kmra4")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Background" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_d0vr2")
+color = Color(0, 0, 0, 1)
+
+[node name="RpgIcon" type="TextureRect" parent="Root/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -687.5
+offset_top = -503.5
+offset_right = 687.5
+offset_bottom = 503.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nsg4g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Background"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 970.0
+grow_horizontal = 2
+theme_override_constants/separation = 50
+
+[node name="ColorRect" type="ColorRect" parent="Root/Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+color = Color(0.133333, 0.133333, 0.133333, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Background/VBoxContainer/ColorRect"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -26.5
+offset_right = 35.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 27
+
+[node name="MainButton" type="Button" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "RPG Movement"
+
+[node name="AboutButton" type="Button" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "About"
+
+[node name="YoutubeButton" type="TextureButton" parent="Root/Background/VBoxContainer/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_322ka")
+texture_hover = ExtResource("4_cdavy")
+texture_focused = ExtResource("4_cdavy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MainContent" type="VBoxContainer" parent="Root/Background/VBoxContainer"]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="LorenzoParent" type="Control" parent="Root/Background/VBoxContainer/MainContent"]
+custom_minimum_size = Vector2(0, 376)
+layout_mode = 2
+
+[node name="Lorenzo" type="TextureButton" parent="Root/Background/VBoxContainer/MainContent/LorenzoParent"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_8de6y")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AboutContent" type="VBoxContainer" parent="Root/Background/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/Background/VBoxContainer/AboutContent"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_lilro")
+theme_override_font_sizes/font_size = 27
+text = "We are the RPG Movement. What are your stats? Come to us to find out what skills you can do with your stats and level up!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/AboutButton" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/ColorRect/HBoxContainer/YoutubeButton" to="." method="_on_youtube_pressed"]
+[connection signal="pressed" from="Root/Background/VBoxContainer/MainContent/LorenzoParent/Lorenzo" to="." method="_on_lorenzo_pressed"]
