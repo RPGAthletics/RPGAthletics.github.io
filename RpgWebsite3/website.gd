@@ -25,10 +25,12 @@ func _on_lorenzo_pressed():
 func _on_about_button_pressed():
 	turn_on_content(about_content)
 	bgm.stop()
+	minigame.playing = false
 
 func _on_main_button_pressed():
 	turn_on_content(main_content)
 	bgm.stop()
+	minigame.playing = false
 
 func _on_YoutubeButton_pressed():
 	OS.shell_open("https://www.youtube.com/@RPGMovement")
@@ -44,3 +46,4 @@ func _on_Minigame_pressed():
 	turn_on_content(minigame_content)
 	bgm.play()
 	minigame.reset()
+	minigame.playing = true

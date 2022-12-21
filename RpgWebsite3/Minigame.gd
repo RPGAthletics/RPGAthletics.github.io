@@ -6,7 +6,7 @@ export(PackedScene) var rock
 
 onready var timer:Timer = $Timer
 var points = 0
-
+var playing = false
 
 func _ready():
 	reset()
@@ -20,6 +20,8 @@ func reset():
 
 
 func _on_Timer_timeout():
+	if not playing:
+		return
 	var asd = rock.instance()
 	timer.wait_time = randf() * 0.5 + 0.5
 	$Rocks.add_child(asd)
