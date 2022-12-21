@@ -8,9 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Hazard",
+"language": "GDScript",
+"path": "res://Hazard.gd"
+}, {
+"base": "Node2D",
+"class": "Minigame",
+"language": "GDScript",
+"path": "res://Minigame.gd"
+} ]
+_global_script_class_icons={
+"Hazard": "",
+"Minigame": ""
+}
+
 [application]
 
-config/name="Rpg Website 3"
+config/name="RPG Movement"
 run/main_scene="res://Website.tscn"
 config/icon="res://RPGIcon.png"
 
