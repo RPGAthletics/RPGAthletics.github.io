@@ -26,11 +26,13 @@ func _on_about_button_pressed():
 	turn_on_content(about_content)
 	bgm.stop()
 	minigame.playing = false
+	minigame.reset()
 
 func _on_main_button_pressed():
 	turn_on_content(main_content)
 	bgm.stop()
 	minigame.playing = false
+	minigame.reset()
 
 func _on_YoutubeButton_pressed():
 	OS.shell_open("https://www.youtube.com/@RPGMovement")

@@ -3,6 +3,7 @@ extends Node2D
 
 
 export(PackedScene) var rock
+export(PackedScene) var fireball
 
 onready var timer:Timer = $Timer
 var points = 0
@@ -22,7 +23,9 @@ func reset():
 func _on_Timer_timeout():
 	if not playing:
 		return
-	var asd = rock.instance()
+	var asd =  [
+		rock, fireball
+	][randi()%2].instance()
 	timer.wait_time = randf() * 0.5 + 0.5
 	$Rocks.add_child(asd)
 
