@@ -6,6 +6,7 @@ export(PackedScene) var rock
 export(PackedScene) var fireball
 
 onready var timer:Timer = $Timer
+onready var crouch_button:Button = $Instructions/CrouchButton
 var points = 0
 var playing = false
 

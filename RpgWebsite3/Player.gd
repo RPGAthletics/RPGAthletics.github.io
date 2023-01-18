@@ -56,3 +56,7 @@ func stand():
 func crouch_weakness():
 	crouch_weakness = false
 	
+
+
+func _on_CrouchButton_pressed():
+	crouch()
