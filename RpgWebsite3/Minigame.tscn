@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Rock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Minigame.gd" type="Script" id=2]
@@ -14,6 +14,11 @@
 [ext_resource path="res://space.png" type="Texture" id=12]
 [ext_resource path="res://ctrl.png" type="Texture" id=13]
 [ext_resource path="res://whiteLKeftClick.png" type="Texture" id=14]
+[ext_resource path="res://Jordan.png" type="Texture" id=15]
+[ext_resource path="res://Matt.png" type="Texture" id=16]
+[ext_resource path="res://Rachel.png" type="Texture" id=17]
+[ext_resource path="res://Josh.png" type="Texture" id=18]
+[ext_resource path="res://greasy_booga.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 56, 86 )
@@ -34,6 +39,12 @@ extents = Vector2( 34.625, 159 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 32
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.121569, 0.121569, 0.121569, 1 )
+
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -110,8 +121,6 @@ margin_bottom = 511.0
 
 [node name="Rocks" type="Node2D" parent="."]
 
-[node name="Fireball" parent="Rocks" instance=ExtResource( 10 )]
-
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -125,10 +134,10 @@ margin_bottom = 339.0
 text = "Score: 0"
 
 [node name="Instructions" type="Control" parent="."]
-margin_left = 144.0
-margin_top = 99.0
-margin_right = 144.0
-margin_bottom = 99.0
+margin_left = 140.0
+margin_top = 17.0
+margin_right = 140.0
+margin_bottom = 17.0
 
 [node name="Space" type="Sprite" parent="Instructions"]
 position = Vector2( 134, 74.5 )
@@ -152,6 +161,165 @@ margin_bottom = 37.0
 custom_fonts/font = SubResource( 6 )
 text = "Crouch"
 
+[node name="ChooseCharacterPanel" type="Panel" parent="Instructions"]
+margin_left = 359.0
+margin_top = -48.0
+margin_right = 879.0
+margin_bottom = 109.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="ChooseCharacterLabel" type="Label" parent="Instructions/ChooseCharacterPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -149.5
+margin_top = 9.0
+margin_right = 149.5
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 6 )
+text = "Choose Your Character"
+
+[node name="ChooseCharacters" type="HBoxContainer" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -244.5
+margin_top = 47.0
+margin_right = 244.5
+margin_bottom = 107.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="ChooseLorenzo" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 14.0
+margin_right = 74.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseLorenzo"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Lorenzo"
+align = 1
+
+[node name="ChooseMatt" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 94.0
+margin_right = 154.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseMatt"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Matthew"
+align = 1
+
+[node name="ChooseJordan" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 174.0
+margin_right = 234.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseJordan"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Jordan"
+align = 1
+
+[node name="ChooseRachel" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 254.0
+margin_right = 314.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 5
+
+[node name="Label4" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseRachel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Rachel"
+align = 1
+
+[node name="ChooseJosh" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 334.0
+margin_right = 394.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 18 )
+expand = true
+stretch_mode = 5
+
+[node name="Label5" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseJosh"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Joshua"
+align = 1
+
+[node name="ChooseCameron" type="TextureButton" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters"]
+margin_left = 414.0
+margin_right = 474.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+texture_normal = ExtResource( 19 )
+expand = true
+stretch_mode = 5
+
+[node name="Label6" type="Label" parent="Instructions/ChooseCharacterPanel/ChooseCharacterLabel/ChooseCharacters/ChooseCameron"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 8 )
+text = "Cameron"
+align = 1
+
 [node name="Jump" type="Label" parent="Instructions"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -162,10 +330,10 @@ custom_fonts/font = SubResource( 6 )
 text = "Jump"
 
 [node name="CrouchButton" type="Button" parent="Instructions"]
-margin_left = -87.0
+margin_left = -126.0
 margin_top = 50.0
 margin_right = -12.0
-margin_bottom = 96.0
+margin_bottom = 163.0
 custom_fonts/font = SubResource( 7 )
 text = "Crouch"
 
