@@ -1,0 +1,224 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Textures/RpgIconSmall.png" type="Texture" id=1]
+[ext_resource path="res://RpgWebsite.tres" type="Theme" id=2]
+[ext_resource path="res://Textures/BgWithGuy.png" type="Texture" id=3]
+[ext_resource path="res://Textures/RpgIcon.png" type="Texture" id=4]
+[ext_resource path="res://RpgWebsite.gd" type="Script" id=5]
+[ext_resource path="res://Textures/SocialIcons/tiktok.png" type="Texture" id=6]
+[ext_resource path="res://Textures/SocialIcons/twitter.png" type="Texture" id=9]
+[ext_resource path="res://Textures/SocialIcons/youtube.png" type="Texture" id=10]
+[ext_resource path="res://Textures/SocialIcons/insta.png" type="Texture" id=11]
+[ext_resource path="res://Textures/SocialIcons/facebook.png" type="Texture" id=12]
+[ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 13 )
+
+[node name="RpgWebsite" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Fill" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="GuyJumping" type="TextureRect" parent="Fill"]
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RpgBackground" type="TextureRect" parent="Fill"]
+modulate = Color( 1, 1, 1, 0.235294 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1064.0
+margin_top = -468.0
+margin_right = 836.0
+margin_bottom = 522.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Top" type="Control" parent="Fill"]
+anchor_right = 1.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RpgTitleIcon" type="TextureRect" parent="Fill/Top"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 220.0
+margin_bottom = 25.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="TopHBoxC" type="HBoxContainer" parent="Fill/Top"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_bottom = 25.0
+custom_constants/separation = 65
+alignment = 1
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC"]
+margin_left = 357.0
+margin_right = 482.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "SHOP"
+align = 1
+valign = 1
+
+[node name="ButtonShop" type="TextureButton" parent="Fill/Top/TopHBoxC/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+expand = true
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Fill/Top/TopHBoxC"]
+margin_left = 547.0
+margin_right = 672.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "BLOG"
+align = 1
+valign = 1
+
+[node name="ButtonBlog" type="TextureButton" parent="Fill/Top/TopHBoxC/Label2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+
+[node name="Label3" type="Label" parent="Fill/Top/TopHBoxC"]
+margin_left = 737.0
+margin_right = 862.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "VIDEO"
+align = 1
+valign = 1
+
+[node name="ButtonVideo" type="TextureButton" parent="Fill/Top/TopHBoxC/Label3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+
+[node name="Label4" type="Label" parent="Fill/Top/TopHBoxC"]
+margin_left = 927.0
+margin_right = 1052.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ABOUT"
+align = 1
+valign = 1
+
+[node name="ButtonAbout" type="TextureButton" parent="Fill/Top/TopHBoxC/Label4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+
+[node name="Label5" type="Label" parent="Fill/Top/TopHBoxC"]
+margin_left = 1117.0
+margin_right = 1242.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "CONTACT"
+align = 1
+valign = 1
+
+[node name="ButtonContact" type="TextureButton" parent="Fill/Top/TopHBoxC/Label5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+
+[node name="SocialMediaIcons" type="HBoxContainer" parent="Fill"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -75.0
+margin_bottom = -45.0
+custom_constants/separation = 145
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ButtonFacebook" type="TextureButton" parent="Fill/SocialMediaIcons"]
+margin_left = 435.0
+margin_right = 465.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonTwitter" type="TextureButton" parent="Fill/SocialMediaIcons"]
+margin_left = 610.0
+margin_right = 640.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonYoutubeIcon" type="TextureButton" parent="Fill/SocialMediaIcons"]
+margin_left = 785.0
+margin_right = 815.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonInsta" type="TextureButton" parent="Fill/SocialMediaIcons"]
+margin_left = 960.0
+margin_right = 990.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+
+[node name="ButtonTikTok" type="TextureButton" parent="Fill/SocialMediaIcons"]
+margin_left = 1135.0
+margin_right = 1165.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5

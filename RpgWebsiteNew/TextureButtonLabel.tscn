@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/black_button.png" type="Texture" id=1]
+[ext_resource path="res://Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://TextureButtonLabel.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="ButtonYoutube" type="TextureButton"]
+margin_left = 522.0
+margin_right = 772.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 250, 60 )
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 1 )
+expand = true
+script = ExtResource( 3 )
+font_color = null
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
