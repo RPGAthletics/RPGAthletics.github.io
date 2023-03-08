@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rpg Website New"
-run/main_scene="res://RpgWebsite.tscn"
+run/main_scene="res://RpgWebsiteMainPage.tscn"
 config/icon="res://icon.png"
 
 [display]
