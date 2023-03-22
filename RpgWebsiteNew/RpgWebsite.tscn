@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Textures/RpgIconSmall.png" type="Texture" id=1]
 [ext_resource path="res://RpgWebsite.tres" type="Theme" id=2]
@@ -6,11 +6,14 @@
 [ext_resource path="res://Textures/RpgIcon.png" type="Texture" id=4]
 [ext_resource path="res://RpgWebsite.gd" type="Script" id=5]
 [ext_resource path="res://Textures/SocialIcons/tiktok.png" type="Texture" id=6]
+[ext_resource path="res://Textures/ButtonArrow.png" type="Texture" id=7]
+[ext_resource path="res://ButtonHoverGreen.gd" type="Script" id=8]
 [ext_resource path="res://Textures/SocialIcons/twitter.png" type="Texture" id=9]
 [ext_resource path="res://Textures/SocialIcons/youtube.png" type="Texture" id=10]
 [ext_resource path="res://Textures/SocialIcons/insta.png" type="Texture" id=11]
 [ext_resource path="res://Textures/SocialIcons/facebook.png" type="Texture" id=12]
 [ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://ButtonHoverGreen.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 13 )
@@ -69,87 +72,119 @@ margin_bottom = 25.0
 custom_constants/separation = 65
 alignment = 1
 
-[node name="Label" type="Label" parent="Fill/Top/TopHBoxC"]
-margin_left = 357.0
-margin_right = 482.0
+[node name="ButtonShop" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 262.0
+margin_right = 387.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
+mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonShop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "SHOP"
 align = 1
 valign = 1
 
-[node name="ButtonShop" type="TextureButton" parent="Fill/Top/TopHBoxC/Label"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="ButtonBlog" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 452.0
+margin_right = 577.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="Fill/Top/TopHBoxC"]
-margin_left = 547.0
-margin_right = 672.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 125, 50 )
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonBlog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "BLOG"
 align = 1
 valign = 1
 
-[node name="ButtonBlog" type="TextureButton" parent="Fill/Top/TopHBoxC/Label2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-
-[node name="Label3" type="Label" parent="Fill/Top/TopHBoxC"]
-margin_left = 737.0
-margin_right = 862.0
+[node name="ButtonVideo" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 642.0
+margin_right = 767.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
+mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonVideo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "VIDEO"
 align = 1
 valign = 1
 
-[node name="ButtonVideo" type="TextureButton" parent="Fill/Top/TopHBoxC/Label3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-
-[node name="Label4" type="Label" parent="Fill/Top/TopHBoxC"]
-margin_left = 927.0
-margin_right = 1052.0
+[node name="ButtonFaq" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 832.0
+margin_right = 957.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
+mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonFaq"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "ABOUT"
+text = "FAQ"
 align = 1
 valign = 1
 
-[node name="ButtonAbout" type="TextureButton" parent="Fill/Top/TopHBoxC/Label4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-
-[node name="Label5" type="Label" parent="Fill/Top/TopHBoxC"]
-margin_left = 1117.0
-margin_right = 1242.0
+[node name="ButtonAbout" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 1022.0
+margin_right = 1147.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
+mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonAbout"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ABOUT US"
+align = 1
+valign = 1
+
+[node name="ButtonContact" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+margin_left = 1212.0
+margin_right = 1337.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+mouse_default_cursor_shape = 2
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Fill/Top/TopHBoxC/ButtonContact"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "CONTACT"
 align = 1
 valign = 1
-
-[node name="ButtonContact" type="TextureButton" parent="Fill/Top/TopHBoxC/Label5"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
 
 [node name="RpgTitleIcon" type="TextureButton" parent="Fill/Top"]
 anchor_top = 0.5
@@ -175,6 +210,7 @@ __meta__ = {
 }
 
 [node name="ButtonFacebook" type="TextureButton" parent="Fill/SocialMediaIcons"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 435.0
 margin_right = 465.0
 margin_bottom = 30.0
@@ -183,8 +219,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 12 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 8 )
 
 [node name="ButtonTwitter" type="TextureButton" parent="Fill/SocialMediaIcons"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 610.0
 margin_right = 640.0
 margin_bottom = 30.0
@@ -193,8 +231,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 9 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 14 )
 
-[node name="ButtonYoutubeIcon" type="TextureButton" parent="Fill/SocialMediaIcons"]
+[node name="ButtonYoutube" type="TextureButton" parent="Fill/SocialMediaIcons"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 785.0
 margin_right = 815.0
 margin_bottom = 30.0
@@ -203,8 +243,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 10 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 14 )
 
 [node name="ButtonInsta" type="TextureButton" parent="Fill/SocialMediaIcons"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 960.0
 margin_right = 990.0
 margin_bottom = 30.0
@@ -213,8 +255,10 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 14 )
 
 [node name="ButtonTikTok" type="TextureButton" parent="Fill/SocialMediaIcons"]
+self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 1135.0
 margin_right = 1165.0
 margin_bottom = 30.0
@@ -223,3 +267,4 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 5
+script = ExtResource( 14 )
