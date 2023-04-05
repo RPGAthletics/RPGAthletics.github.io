@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://RpgWebsite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/RpgArrow.png" type="Texture" id=2]
 [ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Textures/ButtonArrow.png" type="Texture" id=4]
+[ext_resource path="res://Textures/DROP R1 landing page/merch/tshirt front.png" type="Texture" id=5]
+[ext_resource path="res://Textures/DROP R1 landing page/DROP R1.png" type="Texture" id=6]
+[ext_resource path="res://Textures/DROP R1 landing page/merch/bag front.png" type="Texture" id=7]
+[ext_resource path="res://Textures/DROP R1 landing page/merch/front sweater.png" type="Texture" id=8]
+[ext_resource path="res://Textures/DROP R1 landing page/merch/bottle front.png" type="Texture" id=9]
+[ext_resource path="res://Textures/DROP R1 landing page/web mockup.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 200
-extra_spacing_top = -30
-extra_spacing_bottom = -30
+size = 24
 font_data = ExtResource( 3 )
 
 [node name="RpgWebsite" instance=ExtResource( 1 )]
@@ -23,17 +27,171 @@ texture = ExtResource( 2 )
 [node name="ButtonShop" parent="Fill/Top/TopHBoxC" index="0"]
 texture_normal = ExtResource( 4 )
 
-[node name="ComingSoon" type="Label" parent="Fill" index="4"]
+[node name="Content" type="Control" parent="." index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 1.0
-margin_right = 9.0
-margin_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="InnerContent" type="VBoxContainer" parent="Content" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -700.0
+margin_top = -341.0
+margin_right = 700.0
+margin_bottom = 350.0
+custom_constants/separation = 39
+
+[node name="Control" type="Control" parent="Content/InnerContent" index="0"]
+margin_right = 1400.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="DropR1Text" type="TextureRect" parent="Content/InnerContent/Control" index="0"]
+margin_right = 389.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/InnerContent" index="1"]
+margin_top = 119.0
+margin_right = 1400.0
+margin_bottom = 694.0
+
+[node name="OptionContainer" type="Control" parent="Content/InnerContent/HBoxContainer" index="0"]
+margin_right = 272.42
+margin_bottom = 575.0
+rect_min_size = Vector2( 272.42, 50 )
+
+[node name="OptionButton" type="MenuButton" parent="Content/InnerContent/HBoxContainer/OptionContainer" index="0"]
+anchor_right = 1.0
+margin_top = 55.0
+margin_right = -125.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 175, 50 )
+icon = ExtResource( 10 )
+expand_icon = true
+
+[node name="PopupMenu2" type="PopupMenu" parent="Content/InnerContent/HBoxContainer/OptionContainer/OptionButton" index="1"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Content/InnerContent/HBoxContainer" index="1"]
+margin_left = 280.0
+margin_right = 1180.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 900, 575 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="GridContainer" parent="Content/InnerContent/HBoxContainer/ScrollContainer" index="0"]
+margin_right = 851.0
+margin_bottom = 979.0
+custom_constants/vseparation = 43
+custom_constants/hseparation = 51
+columns = 2
+
+[node name="ShoppingItem" type="VBoxContainer" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer" index="0"]
+margin_right = 400.0
+margin_bottom = 468.0
+
+[node name="TextureRect" type="TextureButton" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem" index="0"]
+margin_right = 400.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem" index="1"]
+margin_top = 408.0
+margin_right = 400.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 60 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
 custom_fonts/font = SubResource( 1 )
-text = "COMING
-SOON"
+text = "T-SHIRT
+$40.00"
 align = 1
-valign = 1
-autowrap = true
+
+[node name="ShoppingItem2" type="VBoxContainer" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer" index="1"]
+margin_left = 451.0
+margin_right = 851.0
+margin_bottom = 468.0
+
+[node name="TextureRect" type="TextureButton" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem2" index="0"]
+margin_right = 400.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+texture_normal = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem2" index="1"]
+margin_top = 408.0
+margin_right = 400.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
+custom_fonts/font = SubResource( 1 )
+text = "CREW NECK SWEATER
+$80.00"
+align = 1
+
+[node name="ShoppingItem3" type="VBoxContainer" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer" index="2"]
+margin_top = 511.0
+margin_right = 400.0
+margin_bottom = 979.0
+
+[node name="TextureRect" type="TextureButton" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem3" index="0"]
+margin_right = 400.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem3" index="1"]
+margin_top = 408.0
+margin_right = 400.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
+custom_fonts/font = SubResource( 1 )
+text = "BLENDER BOTTLE
+$30.00"
+align = 1
+
+[node name="ShoppingItem4" type="VBoxContainer" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer" index="3"]
+margin_left = 451.0
+margin_top = 511.0
+margin_right = 851.0
+margin_bottom = 979.0
+
+[node name="TextureRect" type="TextureButton" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem4" index="0"]
+margin_right = 400.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Content/InnerContent/HBoxContainer/ScrollContainer/VBoxContainer/ShoppingItem4" index="1"]
+margin_top = 408.0
+margin_right = 400.0
+margin_bottom = 468.0
+rect_min_size = Vector2( 0, 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -5
+custom_fonts/font = SubResource( 1 )
+text = "DUFFLE BAG
+$100.00"
+align = 1
