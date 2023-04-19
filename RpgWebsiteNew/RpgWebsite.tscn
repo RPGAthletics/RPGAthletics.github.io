@@ -74,6 +74,7 @@ custom_constants/separation = 65
 alignment = 1
 
 [node name="ButtonShop" type="TextureButton" parent="Fill/Top/TopHBoxC"]
+visible = false
 margin_left = 262.0
 margin_right = 387.0
 margin_bottom = 50.0
@@ -93,8 +94,8 @@ align = 1
 valign = 1
 
 [node name="ButtonBlog" type="TextureButton" parent="Fill/Top/TopHBoxC"]
-margin_left = 452.0
-margin_right = 577.0
+margin_left = 357.0
+margin_right = 482.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
@@ -112,8 +113,8 @@ align = 1
 valign = 1
 
 [node name="ButtonVideo" type="TextureButton" parent="Fill/Top/TopHBoxC"]
-margin_left = 642.0
-margin_right = 767.0
+margin_left = 547.0
+margin_right = 672.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
@@ -131,8 +132,8 @@ align = 1
 valign = 1
 
 [node name="ButtonFaq" type="TextureButton" parent="Fill/Top/TopHBoxC"]
-margin_left = 832.0
-margin_right = 957.0
+margin_left = 737.0
+margin_right = 862.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
@@ -150,8 +151,8 @@ align = 1
 valign = 1
 
 [node name="ButtonAbout" type="TextureButton" parent="Fill/Top/TopHBoxC"]
-margin_left = 1022.0
-margin_right = 1147.0
+margin_left = 927.0
+margin_right = 1052.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
@@ -169,8 +170,8 @@ align = 1
 valign = 1
 
 [node name="ButtonContact" type="TextureButton" parent="Fill/Top/TopHBoxC"]
-margin_left = 1212.0
-margin_right = 1337.0
+margin_left = 1117.0
+margin_right = 1242.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 125, 50 )
 mouse_default_cursor_shape = 2
