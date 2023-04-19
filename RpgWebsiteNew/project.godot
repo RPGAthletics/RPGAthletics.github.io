@@ -20,9 +20,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rpg Website New"
+config/name="RPG Athletics"
 run/main_scene="res://RpgWebsiteMainPage.tscn"
-config/icon="res://icon.png"
+config/icon="res://Textures/website_icon.png"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
@@ -31,6 +35,10 @@ window/size/height=900
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+icon=false
 
 [gui]
 

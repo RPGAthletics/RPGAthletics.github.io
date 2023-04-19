@@ -200,6 +200,7 @@ expand = true
 stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Fill/Top"]
+visible = false
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -242,6 +243,7 @@ __meta__ = {
 }
 
 [node name="ButtonFacebook" type="TextureButton" parent="Fill/SocialMediaIcons"]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 435.0
 margin_right = 465.0
@@ -254,9 +256,10 @@ stretch_mode = 5
 script = ExtResource( 14 )
 
 [node name="ButtonTwitter" type="TextureButton" parent="Fill/SocialMediaIcons"]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 610.0
-margin_right = 640.0
+margin_left = 522.0
+margin_right = 552.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
 mouse_default_cursor_shape = 2
@@ -267,8 +270,8 @@ script = ExtResource( 14 )
 
 [node name="ButtonYoutube" type="TextureButton" parent="Fill/SocialMediaIcons"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 785.0
-margin_right = 815.0
+margin_left = 610.0
+margin_right = 640.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
 mouse_default_cursor_shape = 2
@@ -279,8 +282,8 @@ script = ExtResource( 14 )
 
 [node name="ButtonInsta" type="TextureButton" parent="Fill/SocialMediaIcons"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 960.0
-margin_right = 990.0
+margin_left = 785.0
+margin_right = 815.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
 mouse_default_cursor_shape = 2
@@ -291,8 +294,8 @@ script = ExtResource( 14 )
 
 [node name="ButtonTikTok" type="TextureButton" parent="Fill/SocialMediaIcons"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 1135.0
-margin_right = 1165.0
+margin_left = 960.0
+margin_right = 990.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 30, 30 )
 mouse_default_cursor_shape = 2

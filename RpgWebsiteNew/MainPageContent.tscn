@@ -13,11 +13,15 @@ custom_constants/separation = 55
 alignment = 1
 
 [node name="ButtonYoutube" parent="." instance=ExtResource( 1 )]
+visible = false
+margin_left = 675.0
+margin_right = 925.0
 text = "YOUTUBE"
 tex_norm = ExtResource( 3 )
 font_color = Color( 1, 1, 1, 1 )
 
 [node name="ButtonGame" parent="." instance=ExtResource( 1 )]
+visible = false
 margin_left = 827.0
 margin_right = 1077.0
 text = "GAME"
