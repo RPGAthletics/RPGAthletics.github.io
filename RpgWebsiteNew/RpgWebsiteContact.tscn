@@ -1,19 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://RpgWebsite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/RpgArrow.png" type="Texture" id=2]
-[ext_resource path="res://Roboto/Roboto-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Textures/ButtonArrow.png" type="Texture" id=4]
+[ext_resource path="res://Roboto/Roboto-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://StyleBoxFlatGreenOutline.tres" type="StyleBox" id=7]
+[ext_resource path="res://TextureButtonLabel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Textures/black_button.png" type="Texture" id=9]
+[ext_resource path="res://Textures/green_button.png" type="Texture" id=10]
+[ext_resource path="res://RpgWebsiteContact.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 200
-extra_spacing_top = -30
-extra_spacing_bottom = -30
-font_data = ExtResource( 3 )
+size = 64
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=3]
+LineEdit/styles/normal = ExtResource( 7 )
+TextEdit/styles/normal = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 5 )
 
 [node name="RpgWebsite" instance=ExtResource( 1 )]
+script = ExtResource( 11 )
 
 [node name="RpgBackground" parent="Fill" index="1"]
+visible = false
 margin_left = -800.0
 margin_top = -405.0
 margin_right = 640.0
@@ -23,17 +40,150 @@ texture = ExtResource( 2 )
 [node name="ButtonContact" parent="Fill/Top/TopHBoxC" index="5"]
 texture_normal = ExtResource( 4 )
 
-[node name="ComingSoon" type="Label" parent="Fill" index="4"]
+[node name="Control" type="Control" parent="." index="1"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 1.0
-margin_right = 9.0
-margin_bottom = 1.0
+mouse_filter = 2
+
+[node name="Root" type="VBoxContainer" parent="Control" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -664.0
+margin_top = -333.5
+margin_right = 664.0
+margin_bottom = 333.5
+
+[node name="Control" type="Control" parent="Control/Root" index="0"]
+margin_right = 1328.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="Title" type="Label" parent="Control/Root/Control" index="0"]
+anchor_bottom = 1.0
+margin_right = 589.0
+rect_scale = Vector2( 1.2, 0.9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.882353, 0.529412, 1 )
+custom_constants/shadow_offset_x = -4
 custom_fonts/font = SubResource( 1 )
-text = "COMING
-SOON"
+text = "CONTACT US"
+
+[node name="Control2" type="Control" parent="Control/Root" index="1"]
+margin_top = 68.0
+margin_right = 1328.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Root/Control2" index="0"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = -50.0
+margin_right = 300.0
+theme = SubResource( 3 )
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="Control/Root/Control2/VBoxContainer" index="0"]
+margin_right = 600.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "NAME*"
+
+[node name="NameLineEdit" type="LineEdit" parent="Control/Root/Control2/VBoxContainer" index="1"]
+margin_top = 31.0
+margin_right = 600.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "what should we call you?"
+
+[node name="Label2" type="Label" parent="Control/Root/Control2/VBoxContainer" index="2"]
+margin_top = 93.0
+margin_right = 600.0
+margin_bottom = 112.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "EMAIL*"
+
+[node name="EmailLineEdit" type="LineEdit" parent="Control/Root/Control2/VBoxContainer" index="3"]
+margin_top = 124.0
+margin_right = 600.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "example@gmail.com"
+
+[node name="Label3" type="Label" parent="Control/Root/Control2/VBoxContainer" index="4"]
+margin_top = 186.0
+margin_right = 600.0
+margin_bottom = 205.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "SUBJECT*"
+
+[node name="SubjectLineEdit" type="LineEdit" parent="Control/Root/Control2/VBoxContainer" index="5"]
+margin_top = 217.0
+margin_right = 600.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+placeholder_text = "what do you want to ask?"
+
+[node name="Label4" type="Label" parent="Control/Root/Control2/VBoxContainer" index="6"]
+margin_top = 279.0
+margin_right = 600.0
+margin_bottom = 298.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "MESSAGE"
+
+[node name="MessageTextEdit" type="TextEdit" parent="Control/Root/Control2/VBoxContainer" index="7"]
+margin_top = 310.0
+margin_right = 600.0
+margin_bottom = 535.0
+rect_min_size = Vector2( 0, 225 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+
+[node name="SubmitButton" parent="Control" index="1" instance=ExtResource( 8 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -396.0
+margin_top = -185.0
+margin_right = -146.0
+margin_bottom = -125.0
+texture_hover = ExtResource( 10 )
+text = "SUBMIT"
+tex_norm = ExtResource( 9 )
+font_color = Color( 1, 1, 1, 1 )
+
+[node name="Message" type="Label" parent="Control/SubmitButton" index="1"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -240.0
+margin_top = -243.0
+margin_bottom = -76.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 align = 1
 valign = 1
 autowrap = true

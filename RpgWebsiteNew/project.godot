@@ -10,11 +10,23 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "TextureButton",
+"class": "ButtonHoverGreen",
+"language": "GDScript",
+"path": "res://ButtonHoverGreen.gd"
+}, {
+"base": "CanvasLayer",
+"class": "RpgWebsite",
+"language": "GDScript",
+"path": "res://RpgWebsite.gd"
+}, {
+"base": "TextureButton",
 "class": "TextureButtonLabel",
 "language": "GDScript",
 "path": "res://TextureButtonLabel.gd"
 } ]
 _global_script_class_icons={
+"ButtonHoverGreen": "",
+"RpgWebsite": "",
 "TextureButtonLabel": ""
 }
 
