@@ -69,12 +69,12 @@ func button_contact_pressed():
 
 
 func button_youtube_pressed():
-	OS.shell_open("https://www.youtube.com/@RPGMovement")
+	OS.shell_open("https://www.youtube.com/@RPGAthletics")
 
 
 func button_insta_pressed():
-	OS.shell_open("https://www.instagram.com/rpeeg/")
+	OS.shell_open("https://www.instagram.com/RPGAthletics/")
 
 
 func button_tiktok_pressed():
-	OS.shell_open("https://www.tiktok.com/@r.peeg")
+	OS.shell_open("https://www.tiktok.com/@rpgathletics")
