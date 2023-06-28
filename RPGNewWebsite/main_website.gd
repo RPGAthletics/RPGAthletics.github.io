@@ -48,6 +48,8 @@ func _ready():
 	button_ig.connect("pressed", func(): OS.shell_open("https://www.instagram.com/RPGAthletics/"))
 	button_tiktok.connect("pressed", func(): OS.shell_open("https://www.tiktok.com/@rpgathletics"))
 
+	button_rpg_logo.emit_signal("pressed")
+
 
 func show_bg_rpg_arrow_only():
 	bg_rpg_logo.visible = false
