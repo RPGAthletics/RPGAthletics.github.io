@@ -24,7 +24,7 @@ func _ready():
 
 		# Send the request
 		http_request_send_to_server.request(
-			"http://"+ server_ip + ":6996",
+			"https://"+ server_ip + ":6996",
 			["Content-Type: application/json"],
 			HTTPClient.METHOD_POST,
 			JSON.stringify(x)
