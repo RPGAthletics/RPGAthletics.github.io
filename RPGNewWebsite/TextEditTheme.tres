@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b0n6rploog0hj"]
+
+[ext_resource type="StyleBox" uid="uid://dhmmbq72e1rlc" path="res://StyleBoxGreenOutline.tres" id="1_onium"]
+
+[resource]
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/styles/normal = ExtResource("1_onium")
+TextEdit/colors/caret_color = Color(0, 0, 0, 1)
+TextEdit/styles/normal = ExtResource("1_onium")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xoexpv2nvi44"]
+[gd_scene load_steps=20 format=3 uid="uid://xoexpv2nvi44"]
 
 [ext_resource type="Script" path="res://main_website.gd" id="1_uphle"]
 [ext_resource type="Texture2D" uid="uid://b1jth5t8wjkbx" path="res://Textures/BgWithGuy.png" id="2_if1vc"]
@@ -10,7 +10,34 @@
 [ext_resource type="Texture2D" uid="uid://brlejvk5oi7be" path="res://Textures/SocialIcons/youtube.png" id="7_h8gic"]
 [ext_resource type="Texture2D" uid="uid://e86d71iypgj0" path="res://Textures/SocialIcons/insta.png" id="8_3vy1e"]
 [ext_resource type="Script" path="res://texture_button_hover_green.gd" id="8_abvng"]
+[ext_resource type="Script" path="res://contact_content.gd" id="8_i6elt"]
 [ext_resource type="Texture2D" uid="uid://cfjy31yj8ki5r" path="res://Textures/SocialIcons/tiktok.png" id="9_25wbf"]
+[ext_resource type="FontFile" uid="uid://bqhyvafvwou1i" path="res://Roboto/Roboto-Black.ttf" id="9_j7awh"]
+[ext_resource type="Theme" uid="uid://b0n6rploog0hj" path="res://TextEditTheme.tres" id="10_x8556"]
+[ext_resource type="FontFile" uid="uid://dlg3uuhywufjy" path="res://Roboto/Roboto-Regular.ttf" id="11_acjri"]
+[ext_resource type="FontFile" uid="uid://de1kws44vbeh6" path="res://Roboto/Roboto-Medium.ttf" id="12_awrq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32j31"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhc1l"]
+bg_color = Color(0, 0.882353, 0.529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_5yhvq"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("12_awrq4")
+Button/styles/hover = SubResource("StyleBoxFlat_32j31")
+Button/styles/normal = SubResource("StyleBoxFlat_lhc1l")
 
 [node name="main_website" type="Node"]
 script = ExtResource("1_uphle")
@@ -66,6 +93,7 @@ stretch_mode = 5
 metadata/_edit_lock_ = true
 
 [node name="bg_rpg_arrow" type="TextureRect" parent="main_website_container"]
+visible = false
 modulate = Color(1, 1, 1, 0.219608)
 layout_mode = 1
 anchors_preset = -1
@@ -252,6 +280,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="main_content" type="Control" parent="main_website_container/middle_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -260,12 +289,30 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="blog_content" type="Control" parent="main_website_container/middle_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="bg_rpg_arrow" type="TextureRect" parent="main_website_container/middle_container/blog_content"]
+modulate = Color(1, 1, 1, 0.219608)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00885417
+anchor_top = -0.121296
+anchor_right = 0.902604
+anchor_bottom = 0.872222
+offset_top = 131.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7utl3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="main_website_container/middle_container/blog_content"]
 layout_mode = 1
@@ -290,6 +337,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="video_content" type="Control" parent="main_website_container/middle_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -297,7 +345,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="main_website_container/middle_container/video_content"]
+[node name="bg_rpg_arrow" type="TextureRect" parent="main_website_container/middle_container/video_content"]
+modulate = Color(1, 1, 1, 0.219608)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00885417
+anchor_top = -0.121296
+anchor_right = 0.902604
+anchor_bottom = 0.872222
+offset_top = 131.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7utl3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="main_website_container/middle_container/video_content"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -320,6 +385,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="faq_content" type="Control" parent="main_website_container/middle_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -327,7 +393,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="main_website_container/middle_container/faq_content"]
+[node name="bg_rpg_arrow" type="TextureRect" parent="main_website_container/middle_container/faq_content"]
+modulate = Color(1, 1, 1, 0.219608)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00885417
+anchor_top = -0.121296
+anchor_right = 0.902604
+anchor_bottom = 0.872222
+offset_top = 131.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7utl3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="main_website_container/middle_container/faq_content"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -350,6 +433,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="about_content" type="Control" parent="main_website_container/middle_container"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,7 +441,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="main_website_container/middle_container/about_content"]
+[node name="bg_rpg_arrow" type="TextureRect" parent="main_website_container/middle_container/about_content"]
+modulate = Color(1, 1, 1, 0.219608)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00885417
+anchor_top = -0.121296
+anchor_right = 0.902604
+anchor_bottom = 0.872222
+offset_top = 131.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7utl3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="main_website_container/middle_container/about_content"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -386,28 +487,139 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_i6elt")
 
-[node name="Label" type="Label" parent="main_website_container/middle_container/contact_content"]
+[node name="VBoxContainer" type="VBoxContainer" parent="main_website_container/middle_container/contact_content"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -635.5
-offset_top = -304.0
-offset_right = 635.5
-offset_bottom = 304.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Control" type="Control" parent="main_website_container/middle_container/contact_content/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control"]
+layout_mode = 1
+offset_left = 150.0
+offset_right = 906.0
+offset_bottom = 151.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = -70
+theme_override_colors/font_shadow_color = Color(0, 0.882353, 0.529412, 1)
+theme_override_constants/shadow_offset_x = -8
+theme_override_constants/shadow_offset_y = 0
 theme_override_fonts/font = ExtResource("6_l7y6f")
-theme_override_font_sizes/font_size = 256
-text = "COMING SOON"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "CONTACT US"
+
+[node name="Control2" type="Control" parent="main_website_container/middle_container/contact_content/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2"]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 20.0
+offset_right = 350.0
+offset_bottom = 620.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7awh")
+theme_override_font_sizes/font_size = 24
+text = "NAME*"
+
+[node name="line_edit_name" type="LineEdit" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("10_x8556")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_acjri")
+theme_override_font_sizes/font_size = 32
+caret_blink = true
+
+[node name="Label2" type="Label" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7awh")
+theme_override_font_sizes/font_size = 24
+text = "EMAIL*"
+
+[node name="line_edit_email" type="LineEdit" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("10_x8556")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_acjri")
+theme_override_font_sizes/font_size = 32
+caret_blink = true
+
+[node name="Label3" type="Label" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7awh")
+theme_override_font_sizes/font_size = 24
+text = "SUBJECT*"
+
+[node name="line_edit_subject" type="LineEdit" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("10_x8556")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_acjri")
+theme_override_font_sizes/font_size = 32
+caret_blink = true
+
+[node name="Label4" type="Label" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_j7awh")
+theme_override_font_sizes/font_size = 24
+text = "MESSAGE"
+
+[node name="text_edit_message" type="TextEdit" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+theme = ExtResource("10_x8556")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_acjri")
+theme_override_font_sizes/font_size = 32
+caret_blink = true
+
+[node name="Control" type="Control" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="button_submit" type="Button" parent="main_website_container/middle_container/contact_content/VBoxContainer/Control2/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 85.0
+offset_top = -30.0
+offset_right = 380.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_5yhvq")
+text = "SUBMIT"
+
+[node name="http_request_send_to_server" type="HTTPRequest" parent="main_website_container/middle_container/contact_content"]
 
 [node name="bottom_container" type="Control" parent="main_website_container"]
 layout_mode = 1
@@ -418,6 +630,7 @@ anchor_bottom = 1.0
 offset_top = -140.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="main_website_container/bottom_container"]
@@ -465,3 +678,8 @@ texture_normal = ExtResource("9_25wbf")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("8_abvng")
+
+[node name="TextureButton" type="TextureButton" parent="main_website_container/bottom_container"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

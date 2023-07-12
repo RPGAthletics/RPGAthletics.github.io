@@ -51,9 +51,9 @@ func _ready():
 	button_rpg_logo.emit_signal("pressed")
 
 
-func show_bg_rpg_arrow_only():
-	bg_rpg_logo.visible = false
-	bg_rpg_arrow.visible = true
+# func show_bg_rpg_arrow_only():
+# 	bg_rpg_logo.visible = false
+# 	bg_rpg_arrow.visible = true
 
 
 func show_bg_rpg_logo_only():
@@ -65,7 +65,9 @@ func show_content(content: Control):
 	if content == main_content:
 		show_bg_rpg_logo_only()
 	else:
-		show_bg_rpg_arrow_only()
+		bg_rpg_logo.visible = false
+	# else:
+	# 	show_bg_rpg_arrow_only()
 	for x in contents:
 		var the_content = x[0]
 		var the_button = x[1]
